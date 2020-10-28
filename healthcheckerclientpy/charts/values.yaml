@@ -2,4 +2,4 @@ image:
   repository: bonsaro.azurecr.io/healthcheckerclientpy
   pullPolicy: IfNotPresent
   tag: dev
-target_address: "healtchecker:5000"
+target_address: "healthchecker:5000"

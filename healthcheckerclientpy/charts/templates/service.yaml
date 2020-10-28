@@ -8,10 +8,10 @@ metadata:
     heritage: "{{ .Release.Service }}"
 spec:
   ports:
-  - port: {{ .Values.healthcheckerclientpy.service.grpc.externalPort }}
-    name: grpc
+  - port: 80
+    name: http
     protocol: TCP
-    targetPort: {{ .Values.healthcheckerclientpy.service.grpc.internalPort }}
+    targetPort: 80
   selector:
     app: healthcheckerclientpy
   type: ClusterIP

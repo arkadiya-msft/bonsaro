@@ -21,6 +21,6 @@ spec:
       - name: healthcheckerclientpy
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
-          - containerPort: {{ .Values.healthcheckerclientpy.service.grpc.internalPort }}
+          - containerPort: 80
         args:
           - {{ .Values.target_address }}
