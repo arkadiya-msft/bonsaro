@@ -1,0 +1,8 @@
+﻿image:
+  repository: bonsaro.azurecr.io/healthchecker
+  tag: latest
+healthchecker:
+  service:
+    grpc:
+      externalPort: 5000
+      internalPort: 5000

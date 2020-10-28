@@ -1,12 +1,7 @@
 ﻿image:
-  repository: bonsaiprod.azurecr.io/healthcheckerclient
+  repository: bonsaro.azurecr.io/healthcheckerclientcsharp
   tag: latest
 healthcheckerclient:
-  resources:
-    limitMemory: 128M
-    limitCpu: 0.1
-    requestsMemory: 128M
-    requestsCpu: 0.1
   service:
     grpc:
       externalPort: 5000

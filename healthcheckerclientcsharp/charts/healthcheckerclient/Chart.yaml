@@ -1,4 +1,4 @@
 ﻿apiVersion: v1
-description: Healthcheckerclient
-name: healthcheckerclient
+description: Healthcheckerclientcsharp
+name: healthcheckerclientcsharp
 version: v1.0.0

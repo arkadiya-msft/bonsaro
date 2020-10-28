@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: healthcheckerclient
+  name: healthcheckerclientcsharp
   labels:
-    app: healthcheckerclient
+    app: healthcheckerclientcsharp
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
   ports:
-  - port: {{ .Values.healthcheckerclient.service.grpc.externalPort }}
+  - port: {{ .Values.healthcheckerclientcsharp.service.grpc.externalPort }}
     name: grpc
     protocol: TCP
-    targetPort: {{ .Values.healthcheckerclient.service.grpc.internalPort }}
+    targetPort: {{ .Values.healthcheckerclientcsharp.service.grpc.internalPort }}
   selector:
-    app: healthcheckerclient
+    app: healthcheckerclientcsharp
   type: ClusterIP

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthchecker
+  labels:
+    app: healthchecker
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthchecker
+  template:
+    metadata:
+      labels:
+        app: healthchecker
+    spec:
+      enableServiceLinks: false
+      containers:
+      - name: healthchecker
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+          - containerPort: {{ .Values.healthchecker.service.grpc.internalPort }}

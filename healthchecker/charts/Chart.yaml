@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Healthchecker gRPC server
+name: healthchecker
+version: v0.1.0
