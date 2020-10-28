@@ -1,7 +1,7 @@
 ﻿image:
   repository: bonsaro.azurecr.io/healthcheckerclientcsharp
   tag: latest
-healthcheckerclient:
+healthcheckerclientcsharp:
   service:
     grpc:
       externalPort: 5000

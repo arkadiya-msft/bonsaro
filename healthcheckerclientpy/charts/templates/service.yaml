@@ -1,15 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "healthchecker.fullname" . }}
+  name: healthcheckerclientpy
   labels:
-    {{- include "healthchecker.labels" . | nindent 4 }}
+    app: healthcheckerclientpy
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
 spec:
-  type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+  - port: {{ .Values.healthcheckerclientpy.service.grpc.externalPort }}
+    name: grpc
+    protocol: TCP
+    targetPort: {{ .Values.healthcheckerclientpy.service.grpc.internalPort }}
   selector:
-    {{- include "healthchecker.selectorLabels" . | nindent 4 }}
+    app: healthcheckerclientpy
+  type: ClusterIP
