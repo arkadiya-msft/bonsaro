@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File with Kubernetes",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": ["healthchecker:5000"],
+            "console": "integratedTerminal",
+            "preLaunchTask": "bridge-to-kubernetes.service"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": ["healthchecker:5000"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
